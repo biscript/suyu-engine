@@ -1,7 +1,8 @@
-local project =
+project =
 {
     title = "Suyu",
     version = "1.0",
+    author = "Mehentenep",
     window =
     {
         size =
@@ -16,8 +17,15 @@ local project =
                 def = 500,
                 min = 300,
             },
-            resizable = true,
-            fullscreen = false,
+            resizable =
+            {
+                mode = true,
+            },
+            fullscreen =
+            {
+                mode = false,
+                type = "desktop",
+            },
         },
         position =
         {
@@ -27,4 +35,4 @@ local project =
     },
 }
 
-return project
+return

@@ -10,10 +10,10 @@ function love.load()
         {
             minwidth = config.window.size.width.min,
             minheight = config.window.size.height.min,
+            resizable = config.window.size.resizable.mode,
+            fullscreen = config.window.size.fullscreen.mode,
             x = config.window.position.x,
-            y = config.window.position.y,
-            resizable = config.window.size.resizable,
-            fullscreen = config.window.size.fullscreen
+            y = config.window.position.y
         }
     )
 end

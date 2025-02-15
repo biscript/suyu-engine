@@ -1,8 +1,9 @@
 project =
 {
-    title = "Suyu",
+    title = "Suyu Engine",
     version = "1.0",
     author = "Mehentenep",
+    icon = "/res/images/icons/app-icon.png",
     window =
     {
         size =
@@ -27,12 +28,20 @@ project =
                 type = "desktop",
             },
         },
+        borderless =
+        {
+            mode = false,
+        },
         position =
         {
-            x = 0,
-            y = 0,
+            x = nil,
+            y = nil,
+            centered =
+            {
+                mode = true,
+            },
         },
     },
 }
 
-return
+return project

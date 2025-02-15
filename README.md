@@ -1,3 +1,5 @@
+![logo](https://github.com/Mehentenet/suyu-engine/blob/main/res/images/logos/logo3.png)
+
 # Suyu Engine
 Suyu Engine - Suyu ойынына арналған әуендік ритм қозғалтқышы. Бірақ бұл универсал'дық емес бір механика'ға бағыталған қозғалтқыш.
 Бұл қозғалтқыштын масқатты қызықты ритм геймплей ұсыну.

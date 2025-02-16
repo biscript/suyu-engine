@@ -1,6 +1,6 @@
-project = require( "./config" )
+local project = require("config")
 
-koru = require( "./src/lib/koru/main" )
+local koru = require("src.lib.koru.init")
 
 function love.load()
     love.window.setTitle(
@@ -32,4 +32,14 @@ function love.update( dt )
 end
 
 function love.draw()
+    koru.button.draw(
+        "Hello, World!",
+        200,
+        50,
+        100,
+        100,
+        {
+            radius = 10,
+        }
+    )
 end

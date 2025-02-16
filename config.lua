@@ -10,8 +10,8 @@ return {
     {
         width = w/2,
         height = h/2,
-        minwidth = w/10,
-        minheight = h/10,
+        minwidth = w/5,
+        minheight = h/5,
         resizable = true,
         fullscreen = false,
         fullscreentype = "desktop",

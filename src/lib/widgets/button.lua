@@ -1,6 +1,6 @@
 local button = {}
 
-function button.draw( text, width, height, x, y, options )
+function button.draw(text, x, y, width, height, options)
 
     local backgroundColorRed = options and options.backgroundColorRed or 0.25
     local backgroundColorGreen = options and options.backgroundColorGreen or 0.25

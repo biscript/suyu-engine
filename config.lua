@@ -1,47 +1,23 @@
-project =
-{
+local _, _, flags = love.window.getMode()
+local w, h = love.window.getDesktopDimensions(flags.display)
+
+return {
     title = "Suyu Engine",
     version = "1.0",
     author = "Mehentenep",
     icon = "/res/images/icons/app-icon.png",
     window =
     {
-        size =
-        {
-            width =
-            {
-                def = 500,
-                min = 300,
-            },
-            height =
-            {
-                def = 500,
-                min = 300,
-            },
-            resizable =
-            {
-                mode = true,
-            },
-            fullscreen =
-            {
-                mode = false,
-                type = "desktop",
-            },
-        },
-        borderless =
-        {
-            mode = false,
-        },
-        position =
-        {
-            x = nil,
-            y = nil,
-            centered =
-            {
-                mode = true,
-            },
-        },
+        width = w/2,
+        height = h/2,
+        minwidth = w/10,
+        minheight = h/10,
+        resizable = true,
+        fullscreen = false,
+        fullscreentype = "desktop",
+        borderless = false,
+        x = nil,
+        y = nil,
+        centered = true
     },
 }
-
-return project

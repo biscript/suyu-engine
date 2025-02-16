@@ -3,7 +3,7 @@ local w, h = love.window.getDesktopDimensions(flags.display)
 
 return {
     title = "Suyu Engine",
-    version = "1.0",
+    version = "0.0.1",
     author = "Mehentenep",
     icon = "/res/images/icons/app-icon.png",
     window =

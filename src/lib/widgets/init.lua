@@ -2,5 +2,5 @@
 local root = ... .. "."
 
 return {
-    button = require(root .. ".button")
+    button = require(root .. "button")
 }

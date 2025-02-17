@@ -1,8 +1,10 @@
 local project = require("config")
+local widgets = require("src.lib.widgets")
 local flags = require("src.data.window-mode-flags")
 
 function love.load()
     love.window.setTitle(project.title .. " (" .. project.version .. ")")
+    
     love.window.setIcon( love.image.newImageData(project.icon) )
 
     local w, h = project.window.width, project.window.height

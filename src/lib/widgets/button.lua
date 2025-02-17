@@ -1,20 +1,10 @@
 local button = {}
 
 function button.draw(text, x, y, width, height, options)
+    local backgroundColor = options and options.backgroundColor or { 0.25, 0.25, 0.25, 1 }
+    local borderRudius = options and options.borderRudius or 0
 
-    local backgroundColorRed = options and options.backgroundColorRed or 0.25
-    local backgroundColorGreen = options and options.backgroundColorGreen or 0.25
-    local backgroundColorBlue = options and options.backgroundColorBlue or 0.25
-    local backgroundColorAlpha = options and options.backgroundColorAlpha or 1
-
-    love.graphics.setColor(
-        backgroundColorRed,
-        backgroundColorGreen,
-        backgroundColorBlue,
-        backgroundColorAlpha
-    )
-
-    local radius = options and options.radius or 0
+    love.graphics.setColor( backgroundColor )
 
     love.graphics.rectangle(
         "fill",
@@ -22,21 +12,36 @@ function button.draw(text, x, y, width, height, options)
         y,
         width,
         height,
-        radius,
-        radius
+        borderRudius,
+        borderRudius
     )
 
-    local textColorRed = options and options.textColorRed or 1
-    local textColorGreen = options and options.textColorGreen or 1
-    local textColorBlue = options and options.textColorBlue or 1
-    local textColorAlpha = options and options.textColorAlpha or 1
+    local borderWeight = options and options.borderWeight or 0
 
-    love.graphics.setColor(
-        textColorRed,
-        textColorGreen,
-        textColorBlue,
-        textColorAlpha
-    )
+    if borderWeight > 0 then
+
+        local borderColor = options and options.borderColor or { 1, 1, 1, 1 }
+
+        love.graphics.setColor( borderColor )
+        love.graphics.setLineWidth( borderWeight )
+
+        love.graphics.rectangle(
+            "line",
+            x,
+            y,
+            width,
+            height,
+            borderRudius,
+            borderRudius
+        )
+
+    end
+
+    local textColor = options and options.textColor or { 1, 1, 1, 1 }
+    local font = options and options.font or love.graphics.getFont()
+
+    love.graphics.setColor( textColor )
+    love.graphics.setFont( font )
 
     love.graphics.print(
         text,

@@ -1,5 +1,8 @@
 local project = require("config")
 local widgets = require("src.lib.widgets")
+
+local json = require("src.lib.json.json")
+
 local flags = require("src.data.window-mode-flags")
 
 function love.load()

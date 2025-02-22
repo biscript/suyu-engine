@@ -1,3 +1,0 @@
-function love.draw()
-
-end

@@ -22,7 +22,7 @@ menu.draw = function()
         backgroundColor = {0.25, 0.25, 0.25, 1},
         textColor = {1, 1, 1, 1},
         font = arial50,
-        borderRadius = 10
+        borderRadius = 10,
     })
 end
 

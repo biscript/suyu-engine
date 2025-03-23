@@ -13,6 +13,12 @@ function scener.swich( scene )
     end
 end
 
+function scener.resize( w, h )
+    if scener.currectScene and scener.currectScene.resize then
+        scener.currectScene.resize( w, h )
+    end
+end
+
 function scener.update( dt )
     if scener.currectScene and scener.currectScene.update then
         scener.currectScene.update( dt )

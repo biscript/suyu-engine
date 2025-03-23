@@ -1,14 +1,14 @@
 require "love.window"
 
-w, h = love.window.getDesktopDimensions()
+local w, h = love.window.getDesktopDimensions()
 
 function love.conf(t)
     t.window.title = "Suyu Engine"
     t.window.icon = "/res/images/icons/app-icon.png"
-    t.window.width = w/2
-    t.window.height = h/2
-    t.window.minwidth = w/5
-    t.window.minheight = h/5
+    t.window.width = w / 2
+    t.window.height = h / 2
+    t.window.minwidth = w /5
+    t.window.minheight = h / 5
     t.window.resizable = true
     t.window.borderless = false
     t.window.fullscreen = true
@@ -41,5 +41,4 @@ function love.conf(t)
     t.modules.touch = true
     t.modules.video = true
     t.modules.window = true
-    t.modules.thread = true
 end

@@ -1,58 +1,62 @@
 local button = {}
 
-function button.set( options )
-    local options = options or {}
-    local text = options.text or "Button"
-    local x = options.x or 0
-    local y = options.y or 0
-    local width = options.width or 100
-    local height = options.height or 50
-    local backgroundColor = options.backgroundColor or { 0.25, 0.25, 0.25, 1 }
-    local textColor = options.textColor or { 1, 1, 1, 1 }
-    local font = options.font or love.graphics.getFont()
-    local borderRadius = options.borderRadius or 0
-    local borderWeight = options.borderWeight or 0
+function button.new( options )
 
-    love.graphics.setColor( backgroundColor )
+    local self = {}
+
+    local options = options or {}
+
+    self.text = options.text or "Button"
+    self.x = options.x or 0
+    self.y = options.y or 0
+    self.width = options.width or 100
+    self.height = options.height or 50
+    self.backgroundColor = options.backgroundColor or { 0.25, 0.25, 0.25, 0.4 }
+    self.textColor = options.textColor or { 1, 1, 1, 1 }
+    self.borderRadius = options.borderRadius or 0
+    self.borderColor = options and options.borderColor or { 0.5, 0.5, 0.5, 1 }
+    self.borderWeight = options.borderWeight or 1
+
+    return self, options
+
+end
+
+function button.draw( button )
+
+    love.graphics.setColor( button.backgroundColor )
 
     love.graphics.rectangle(
         "fill",
-        x,
-        y,
-        width,
-        height,
-        borderRadius,
-        borderRadius
+        button.x,
+        button.y,
+        button.width,
+        button.height,
+        button.borderRadius,
+        button.borderRadius
     )
-    if borderWeight > 0 then
 
-        local borderColor = options and options.borderColor or { 1, 1, 1, 1 }
+    love.graphics.setColor( button.borderColor )
+    love.graphics.setLineWidth( button.borderWeight )
 
-        love.graphics.setColor( borderColor )
-        love.graphics.setLineWidth( borderWeight )
+    love.graphics.rectangle(
+        "line",
+        button.x,
+        button.y,
+        button.width,
+        button.height,
+        button.borderRadius,
+        button.borderRadius
+    )
 
-        love.graphics.rectangle(
-            "line",
-            x,
-            y,
-            width,
-            height,
-            borderRadius,
-            borderRadius
-        )
-
-    end
-
-    love.graphics.setColor( textColor )
-    love.graphics.setFont( font )
+    love.graphics.setColor( button.textColor )
+    love.graphics.setFont( love.graphics.getFont() )
 
     love.graphics.print(
-        text,
-        x + width / 2 - love.graphics.getFont():getWidth( text ) / 2,
-        y + height / 2 - love.graphics.getFont():getHeight( text ) / 2
+        button.text,
+        button.x + button.width / 2 - love.graphics.getFont():getWidth( button.text ) / 2,
+        button.y + button.height / 2 - love.graphics.getFont():getHeight( button.text ) / 2
     )
 
-    return options
 end
 
 return button

@@ -35,11 +35,7 @@ end
 function love.keypressed(key)
 
     if key == "f11" then
-        if love.window.getFullscreen() == true then
-            love.window.setFullscreen( false )
-        elseif love.window.getFullscreen()  == false then
-            love.window.setFullscreen( true )
-        end
+        love.window.setFullscreen( not love.window.getFullscreen() )
     end
 
     scener.keypressed(key)

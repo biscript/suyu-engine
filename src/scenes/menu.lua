@@ -41,7 +41,7 @@ end
 
 menu.draw = function()
     love.graphics.setColor( 0.3, 0.3, 0.3, 1 )
-    love.graphics.rectangle( "fill", 0, 0, content.contentWidth, 80 )
+    love.graphics.rectangle( "fill", display.left, display.top, display.contentWidth, 80 )
     widgets.button.draw( button1 )
     widgets.button.draw( button2 )
 end

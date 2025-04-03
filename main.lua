@@ -7,7 +7,8 @@ function love.load()
 
 end
 
-function love.resize( w, h )
+function love.resize()
+    local w, h = love.graphics.getPixelDimensions()
 
     core.contentScale.resize( w, h )
     scener.resize( w, h )

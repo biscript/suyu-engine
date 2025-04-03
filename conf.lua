@@ -43,7 +43,7 @@ function love.conf(t)
     t.modules.window = true
 end
 
-content =
+display =
 {
     width = 1280,
     height = 720,

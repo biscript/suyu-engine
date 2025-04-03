@@ -9,12 +9,8 @@
 
 local contentScale = {}
 
-local scale, scaleX, scaleY
-
-contentWidth, contentHeight = love.window.getMode()
-
 function contentScale.resize( w, h )
-        local config = content
+        local config = display
     
         local width = config.width
         local height = config.height
@@ -38,11 +34,11 @@ function contentScale.resize( w, h )
             height = config.height
         end
     
-        content.xScale = w/width
-        content.yScale = h/height
+        display.xScale = w/width
+        display.yScale = h/height
     
-        content.x = w/2 - (config.width * content.xScale)/2
-        content.y = h/2 - (config.height * content.xScale)/2
+        display.x = w/2 - (config.width * display.xScale)/2
+        display.y = h/2 - (config.height * display.xScale)/2
     
         config.left = -(width/2-config.width/2)
         config.right = (width/2+config.width/2)
@@ -54,8 +50,8 @@ function contentScale.resize( w, h )
 end
 
 function contentScale.draw()
-    love.graphics.translate( content.x, content.y )
-    love.graphics.scale( content.xScale, content.yScale )
+    love.graphics.translate( display.x, display.y )
+    love.graphics.scale( display.xScale, display.yScale )
 end
 
 return contentScale

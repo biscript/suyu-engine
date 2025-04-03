@@ -1,6 +1,4 @@
-baseWidth, baseHeight = love.window.getDesktopDimensions()
-screenWidth, screenHeight = love.window.getMode()
-
+local core = require("src.core")
 local scener = require("src.lib.scener")
 
 function love.load()
@@ -11,13 +9,9 @@ end
 
 function love.resize( w, h )
 
-    scale = math.min(
-        w / baseWidth,
-        h / baseHeight
-    )
-
+    core.contentScale.resize( w, h )
     scener.resize( w, h )
-    
+
 end
 
 function love.update(dt)
@@ -29,8 +23,8 @@ end
 function love.draw()
     
     love.graphics.push()
-    love.graphics.scale( scale, scale )
 
+    core.contentScale.draw()
     scener.draw()
 
     love.graphics.pop()

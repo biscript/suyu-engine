@@ -42,3 +42,9 @@ function love.conf(t)
     t.modules.video = true
     t.modules.window = true
 end
+
+content =
+{
+    width = 1280,
+    height = 720,
+}

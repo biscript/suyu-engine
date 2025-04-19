@@ -21,7 +21,7 @@ function button.new( options )
 
 end
 
-function button.draw( button )
+function button.draw( button, x, y, width, height )
 
     love.graphics.setColor( button.backgroundColor )
 

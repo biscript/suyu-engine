@@ -1,8 +1,14 @@
+display = {}
+
 require "love.window"
 
 local w, h = love.window.getDesktopDimensions()
 
 function love.conf(t)
+
+    display.width = 2000
+    display.height = 1000
+
     t.window.title = "Suyu Engine"
     t.window.icon = "/res/images/icons/app-icon.png"
     t.window.width = w / 2
@@ -41,10 +47,5 @@ function love.conf(t)
     t.modules.touch = true
     t.modules.video = true
     t.modules.window = true
-end
 
-display =
-{
-    width = 1280,
-    height = 720,
-}
+end

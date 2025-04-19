@@ -1,4 +1,4 @@
-![logo](/res/images/logos/logo3.png)
+![logo](/res/images/logos/engine-logo3.png)
 
 # Suyu Engine
 Suyu Engine - Suyu ойынына арналған әуендік ритм қозғалтқышы. Бірақ бұл универсал'дық емес бір механика'ға бағыталған қозғалтқыш.

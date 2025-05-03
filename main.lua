@@ -1,7 +1,13 @@
 local engine = require("src.engine")
 local scener = require("src.lib.scener")
 
-function love.load()
+require( "src.handler" )
+
+function love.load(arg)
+
+    if arg[#arg] == "-debug" then
+        require( "mobdebug" ).start()
+    end
 
     local w, h = love.graphics.getPixelDimensions()
 
@@ -31,6 +37,7 @@ function love.draw()
 
     engine.core.renderer.draw()
     scener.draw()
+    love.graphics.setColor( boom )
 
     love.graphics.pop()
 
@@ -39,7 +46,7 @@ end
 function love.keypressed(key)
 
     if key == "f11" then
-        love.window.setFullscreen( not love.window.getFullscreen() )
+        love.window.setFullscreen(not love.window.getFullscreen())
     end
 
     scener.keypressed(key)

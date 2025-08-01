@@ -19,8 +19,10 @@ function love.conf(t)
     t.window.borderless = false
     t.window.fullscreen = true
     t.window.fullscreentype = "desktop"
-    t.window.usedpiscale = true
-    t.window.vsync = true
+    t.highdpi = false
+    t.window.msaa = 0
+    t.window.usedpiscale = false
+    t.window.vsync = 0 -- false
     t.window.x = nil
     t.window.y = nil
     t.window.centered = true
